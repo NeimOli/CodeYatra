@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizTok - Business Video Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- Top Header -->
+        <header class="top-header">
+            <div class="header-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="logo">
+                    <img src="image/logo.png" alt="BizTok">
+                </div>
+            </div>
+            <div class="header-center">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search products...">
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="login-btn">Log in</button>
+                <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <div class="main-area">
+            <!-- Sidebar -->
+            <aside class="sidebar" id="sidebar">
+                <nav>
+                    <a href="#" class="active"><i class="fas fa-fire"></i> Trending</a>
+                    <a href="#"><i class="fas fa-store"></i> Marketplace</a>
+                    <a href="#"><i class="fas fa-heart"></i> Favorites</a>
+                    <a href="#"><i class="fas fa-history"></i> Recently Viewed</a>
+                </nav>
+            </aside>
+
+            <!-- Content Area -->
+            <main class="content">
+                <!-- Categories -->
+                <div class="categories-section">
+                    <div class="category-tags">
+                        <span class="category-tag active">All</span>
+                        <span class="category-tag">Electronics</span>
+                        <span class="category-tag">Fashion</span>
+                        <span class="category-tag">Home & Living</span>
+                        <span class="category-tag">Eco-Friendly</span>
+                    </div>
+                </div>
+
+                <!-- Video Feed -->
+                <div class="video-feed">
+                    <div class="video-container">
+                        <div class="video-player">
+                            <video src="" loop></video>
+                            <div class="product-overlay">
+                                <div class="product-info">
+                                    <h3>Product Name</h3>
+                                    <p class="price">$99.99</p>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="video-actions">
+                                <button class="action-btn">
+                                    <i class="fas fa-heart"></i>
+                                    <span>123.4K</span>
+                                </button>
+                                <button class="action-btn">
+                                    <i class="fas fa-shopping-bag"></i>
+                                    <span>Shop Now</span>
+                                </button>
+                                <button class="action-btn">
+                                    <i class="fas fa-share"></i>
+                                    <span>Share</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
