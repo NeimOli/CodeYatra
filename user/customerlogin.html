@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join ReelShop - Customer Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f6f5f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background: #ffffff;
+            padding-top: 80px;
+        }
+
+        .container {
+            position: relative;
+            width: 850px;
+            max-width: 95%;
+            min-height: 600px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+            padding: 2rem;
+        }
+
+        .welcome-text {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .welcome-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #5995fd;
+        }
+
+        .welcome-text p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .title {
+            font-size: 2.4rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .form-container {
+            position: relative;
+            background: #ffffff;
+            padding: 3rem;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            border: 2px solid #5995fd;
+        }
+
+        .input-field {
+            max-width: 380px;
+            width: 100%;
+            height: 55px;
+            background-color: #f0f0f0;
+            margin: 12px 0;
+            border-radius: 55px;
+            display: grid;
+            grid-template-columns: 15% 85%;
+            padding: 0 0.4rem;
+            position: relative;
+            transition: all 0.3s ease;
+            border: 1px solid #ddd;
+        }
+
+        .input-field:hover {
+            background-color: #e8e8e8;
+            border-color: #5995fd;
+        }
+
+        .input-field:focus-within {
+            border-color: #5995fd;
+            background-color: #fff;
+        }
+
+        .input-field i {
+            text-align: center;
+            line-height: 55px;
+            color: #5995fd;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .input-field input {
+            background: none;
+            outline: none;
+            border: none;
+            line-height: 1;
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: #333;
+            padding-left: 10px;
+        }
+
+        .input-field input::placeholder {
+            color: #999;
+            font-weight: 400;
+        }
+
+        .btn {
+            width: 180px;
+            height: 49px;
+            border: none;
+            outline: none;
+            border-radius: 49px;
+            cursor: pointer;
+            background-color: #5995fd;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin: 20px 0;
+            transition: all 0.5s;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(89, 149, 253, 0.3);
+        }
+
+        .btn:hover {
+            background-color: #4d84e2;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(89, 149, 253, 0.4);
+        }
+
+        .error {
+            color: #ff4444;
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+            display: none;
+            text-align: center;
+            background: #ffe5e5;
+            padding: 8px 15px;
+            border-radius: 8px;
+            border: 1px solid #ff4444;
+        }
+
+        .input-field.error-field {
+            border-color: #ff4444;
+            background-color: #fff9f9;
+        }
+
+        .input-field.error-field i {
+            color: #ff4444;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .login-link a {
+            color: #5995fd;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 5px;
+            transition: all 0.3s;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .input-group {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .input-group label {
+            display: block;
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Add navigation styles */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #5995fd;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #5995fd;
+        }
+
+        .nav-link.active {
+            color: #5995fd;
+            font-weight: 600;
+        }
+
+        @media (max-width: 570px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .form-container {
+                padding: 2rem;
+            }
+
+            .title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Add Navigation Bar -->
+    <div class="nav-container">
+        <div class="nav-content">
+            <a href="../login/login.html" class="logo">ReelShop</a>
+            <div class="nav-links">
+                <a href="../login/login.html" class="nav-link">Login</a>
+                <a href="../user/customerlogin.html" class="nav-link active">Customer Sign Up</a>
+                <a href="../seller/sellerreg.html" class="nav-link">Seller Sign Up</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="form-container">
+            <div class="welcome-text">
+                <h2>Welcome to ReelShop!</h2>
+                <p>Create your account and start shopping from your favorite content creators</p>
+            </div>
+            <form id="customerRegForm" onsubmit="registerCustomer(event)">
+                <h1 class="title">Join as Customer</h1>
+                
+                <div class="input-group">
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="fullName" placeholder="Enter your full name" required>
+                    </div>
+                    <div id="nameError" class="error">Please enter your full name (minimum 3 characters)</div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" placeholder="Enter your email address" required>
+                    </div>
+                    <div id="emailError" class="error">Please enter a valid email address</div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-field">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                    </div>
+                    <div id="phoneError" class="error">Please enter a valid 10-digit phone number</div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" placeholder="Create a strong password" required>
+                    </div>
+                    <div id="passwordError" class="error">Password must be at least 6 characters long</div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                    </div>
+                    <div id="confirmPasswordError" class="error">Passwords do not match</div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-field">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" id="address" placeholder="Enter your delivery address" required>
+                    </div>
+                    <div id="addressError" class="error">Please enter your complete delivery address (minimum 10 characters)</div>
+                </div>
+
+                <button type="submit" class="btn">Create Account</button>
+                
+                <div class="login-link">
+                    <p>Already have an account?<a href="../login/login.html">Sign In</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validateField(fieldId, errorId, validationFn, errorMessage) {
+            const field = document.getElementById(fieldId);
+            const errorElement = document.getElementById(errorId);
+            const value = field.value.trim();
+            const isValid = validationFn(value);
+            
+            if (!isValid) {
+                field.closest('.input-field').classList.add('error-field');
+                errorElement.style.display = 'block';
+                errorElement.textContent = errorMessage;
+            } else {
+                field.closest('.input-field').classList.remove('error-field');
+                errorElement.style.display = 'none';
+            }
+            
+            return isValid;
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function validatePhone(phone) {
+            const re = /^\d{10}$/;
+            return re.test(phone);
+        }
+
+        function registerCustomer(event) {
+            event.preventDefault();
+            
+            let isValid = true;
+            
+            // Full Name validation
+            isValid &= validateField(
+                'fullName',
+                'nameError',
+                value => value.length >= 3,
+                'Please enter your full name (minimum 3 characters)'
+            );
+
+            // Email validation
+            isValid &= validateField(
+                'email',
+                'emailError',
+                validateEmail,
+                'Please enter a valid email address'
+            );
+
+            // Phone validation
+            isValid &= validateField(
+                'phone',
+                'phoneError',
+                validatePhone,
+                'Please enter a valid 10-digit phone number'
+            );
+
+            // Password validation
+            isValid &= validateField(
+                'password',
+                'passwordError',
+                value => value.length >= 6,
+                'Password must be at least 6 characters long'
+            );
+
+            // Confirm Password validation
+            isValid &= validateField(
+                'confirmPassword',
+                'confirmPasswordError',
+                value => value === document.getElementById('password').value,
+                'Passwords do not match'
+            );
+
+            // Address validation
+            isValid &= validateField(
+                'address',
+                'addressError',
+                value => value.length >= 10,
+                'Please enter your complete delivery address (minimum 10 characters)'
+            );
+
+            if (!isValid) {
+                return;
+            }
+
+            // Create customer data object
+            const customerData = {
+                fullName: document.getElementById('fullName').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                phone: document.getElementById('phone').value.trim(),
+                address: document.getElementById('address').value.trim(),
+                registrationDate: new Date().toISOString()
+            };
+
+            try {
+                // Store the data
+                localStorage.setItem('customerData', JSON.stringify(customerData));
+                localStorage.setItem('userEmail', customerData.email);
+                
+                // Show success message
+                alert('Registration successful! Please login to continue.');
+                
+                // Redirect to login page
+                window.location.href = '../login/login.html';
+            } catch (error) {
+                console.error('Registration error:', error);
+                alert('An error occurred during registration. Please try again.');
+            }
+        }
+
+        // Add real-time validation
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.id === 'fullName') {
+                    validateField('fullName', 'nameError', value => value.length >= 3, 'Please enter your full name (minimum 3 characters)');
+                } else if (this.id === 'email') {
+                    validateField('email', 'emailError', validateEmail, 'Please enter a valid email address');
+                } else if (this.id === 'phone') {
+                    validateField('phone', 'phoneError', validatePhone, 'Please enter a valid 10-digit phone number');
+                } else if (this.id === 'password') {
+                    validateField('password', 'passwordError', value => value.length >= 6, 'Password must be at least 6 characters long');
+                } else if (this.id === 'confirmPassword') {
+                    validateField('confirmPassword', 'confirmPasswordError', value => value === document.getElementById('password').value, 'Passwords do not match');
+                } else if (this.id === 'address') {
+                    validateField('address', 'addressError', value => value.length >= 10, 'Please enter your complete delivery address (minimum 10 characters)');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

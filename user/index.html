@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReelShop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/">ReelShop</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search products...">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="nav-icons">
+            <a href="cart.html" class="nav-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="nav-label">Cart</span>
+            </a>
+            <button class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span class="nav-label">Logout</span>
+            </button>
+            <a href="/profile" class="nav-icon">
+                <i class="fas fa-user"></i>
+                <span class="nav-label">Profile</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Categories -->
+    <div class="categories">
+        <button class="category active">All</button>
+        <button class="category">Fashion</button>
+        <button class="category">Electronics</button>
+        <button class="category">Home & Living</button>
+        <button class="category">Beauty</button>
+        <button class="category">Sports</button>
+        <button class="category">Toys</button>
+        <button class="category">Books</button>
+        <button class="category">Automotive</button>
+        <button class="category">More</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!--side bar-->
+
+        <!-- Main Feed -->
+        <main class="content">
+            <div class="post">
+                
+                <div class="post-container">
+                    <!-- Left Sidebar -->
+        <aside class="profile-sidebar">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="profile-pic">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3>BagPack</h3>
+                    <p class="username">@getyourbag</p>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span>11.2K</span>
+                            <p>Following</p>
+                        </div>
+                        <div class="stat">
+                            <span>200K</span>
+                            <p>Followers</p>
+                        </div>
+                    </div>
+                    <button class="follow-btn">Follow</button>
+                </div>
+            </div>
+
+            <div class="suggested-accounts">
+                <h4>Suggested Accounts</h4>
+                <div class="account-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="account-info">
+                        <p>@fashion_store</p>
+                        <span>500K followers</span>
+                    </div>
+                </div>
+                <div class="account-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="account-info">
+                        <p>@tech_gadgets</p>
+                        <span>300K followers</span>
+                    </div>
+                </div>
+                <div class="account-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="account-info">
+                        <p>@beauty_shop</p>
+                        <span>20K followers</span>
+                    </div>
+                </div>
+                <button class="close-btn" style="border-color:  blue;border-radius: 5%;">view-more</button>
+            </div>
+        </aside>
+                    <div class="post-image">
+                        <video class="post-video" autoplay muted loop playsinline>
+                            <source src="5644248-uhd_2160_4096_25fps.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-actions">
+                            <div class="action-item">
+                                <button class="action-btn like-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <span class="action-count">102</span>
+                            </div>
+                            <div class="action-item">
+                                <button class="action-btn share-btn">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                                <span class="action-count">24</span>
+                            </div>
+                            <div class="action-item">
+                                <button class="action-btn bookmark-btn">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                                <span class="action-count">5</span>
+                            </div>
+                        </div>
+                        <div class="product-overlay">
+                            <div class="product-info">
+                                <h3>Hand Made Bags</h3>
+                                <p class="price">$20.99</p>
+                                <button class="add-to-cart-btn" data-product-id="1" data-product-name="Hand Made Bag" data-product-price="20.99">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments-section">
+                        <h4>Comments</h4>
+                        <div class="comment-input">
+                            <input type="text" placeholder="Add a comment...">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                        <div class="comments-list">
+                            <div class="comment">
+                                <div class="comment-header">
+                                    <div class="user-info">
+                                        <img src="image.png" alt="User Avatar" class="user-avatar">
+                                        <p class="comment-user">@user1</p>
+                                    </div>
+                                    <span class="comment-time">1d ago</span>
+                                </div>
+                                <p class="comment-text">Great product! Love it 😊</p>
+                                <div class="comment-actions">
+                                    <span>45</span>
+                                    <button>Reply</button>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="comment-header">
+                                    <div class="user-info">
+                                        <img src="image.png" alt="User Avatar" class="user-avatar">
+                                        <p class="comment-user">@user2</p>
+                                    </div>
+                                    <span class="comment-time">1h ago</span>
+                                </div>
+                                <p class="comment-text">best store till date.</p>
+                                <div class="comment-actions">
+                                    <span>12</span>
+                                    <button>Reply</button>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="comment-header">
+                                    <div class="user-info">
+                                        <img src="image.png" alt="User Avatar" class="user-avatar">
+                                        <p class="comment-user">@user3</p>
+                                    </div>
+                                    <span class="comment-time">30m ago</span>
+                                </div>
+                                <p class="comment-text">very nice</p>
+                                <div class="comment-actions">
+                                    <span>12</span>
+                                    <button>Reply</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            
+
+            <div class="post">
+                <div class="post-container">
+                    <aside class="profile-sidebar">
+                        <div class="profile-card">
+                            <div class="profile-header">
+                                <div class="profile-pic">
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                                <h3>GiftHub</h3>
+                                <p class="username">@giftitnow</p>
+                                <div class="profile-stats">
+                                    <div class="stat">
+                                        <span>1.2K</span>
+                                        <p>Following</p>
+                                    </div>
+                                    <div class="stat">
+                                        <span>10K</span>
+                                        <p>Followers</p>
+                                    </div>
+                                </div>
+                                <button class="follow-btn">Follow</button>
+                            </div>
+                        </div>
+            
+                        <div class="suggested-accounts">
+                            <h4>Suggested Accounts</h4>
+                            <div class="account-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div class="account-info">
+                                    <p>@fashion_store</p>
+                                    <span>500K followers</span>
+                                </div>
+                            </div>
+                            <div class="account-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div class="account-info">
+                                    <p>@tech_gadgets</p>
+                                    <span>300K followers</span>
+                                </div>
+                            </div>
+                            <div class="account-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div class="account-info">
+                                    <p>@beauty_shop</p>
+                                    <span>200K followers</span>
+                                </div>
+                            </div>
+                            <button class="close-btn" style="border-color:  blue;border-radius: 5%;">view-more</button>
+                        </div>
+                    </aside>
+                    <div class="post-image">
+                        <video class="post-video" autoplay muted loop playsinline>
+                            <source src="5889611-uhd_3840_2160_25fps.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-actions">
+                            <div class="action-item">
+                                <button class="action-btn like-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <span class="action-count">1.2K</span>
+                            </div>
+                            <div class="action-item">
+                                <button class="action-btn share-btn">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                                <span class="action-count">234</span>
+                            </div>
+                            <div class="action-item">
+                                <button class="action-btn bookmark-btn">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                                <span class="action-count">56</span>
+                            </div>
+                        </div>
+                        <div class="product-overlay">
+                            <div class="product-info">
+                                <h3>Gift Hampers set</h3>
+                                <p class="price">$40.00</p>
+                                <button class="add-to-cart-btn" data-product-id="1" data-product-name="Gift Hamper Set" data-product-price="40.00">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments-section">
+                        <h4>Comments</h4>
+                        <div class="comment-input">
+                            <input type="text" placeholder="Add a comment...">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                        <div class="comments-list">
+                            <div class="comment">
+                                <div class="comment-header">
+                                    <div class="user-info">
+                                        <img src="image.png" alt="User Avatar" class="user-avatar">
+                                        <p class="comment-user">@user1</p>
+                                    </div>
+                                    <span class="comment-time">2h ago</span>
+                                </div>
+                                <p class="comment-text">Great product! Love it 😊</p>
+                                <div class="comment-actions">
+                                    <span>45</span>
+                                    <button>Reply</button>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="comment-header">
+                                    <div class="user-info">
+                                        <img src="image.png" alt="User Avatar" class="user-avatar">
+                                        <p class="comment-user">@user2</p>
+                                    </div>
+                                    <span class="comment-time">1h ago</span>
+                                </div>
+                                <p class="comment-text">best store till date.</p>
+                                <div class="comment-actions">
+                                    <span>12</span>
+                                    <button>Reply</button>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="comment-header">
+                                    <div class="user-info">
+                                        <img src="image.png" alt="User Avatar" class="user-avatar">
+                                        <p class="comment-user">@user3</p>
+                                    </div>
+                                    <span class="comment-time">30m ago</span>
+                                </div>
+                                <p class="comment-text">very nice</p>
+                                <div class="comment-actions">
+                                    <span>12</span>
+                                    <button>Reply</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post">
+                <div class="post-container">
+                    <aside class="profile-sidebar">
+                        <div class="profile-card">
+                            <div class="profile-header">
+                                <div class="profile-pic">
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                                <h3>WearIt</h3>
+                                <p class="username">@your Jewels</p>
+                                <div class="profile-stats">
+                                    <div class="stat">
+                                        <span>1K</span>
+                                        <p>Following</p>
+                                    </div>
+                                    <div class="stat">
+                                        <span>50K</span>
+                                        <p>Followers</p>
+                                    </div>
+                                </div>
+                                <button class="follow-btn">Follow</button>
+                            </div>
+                        </div>
+            
+                        <div class="suggested-accounts">
+                            <h4>Suggested Accounts</h4>
+                            <div class="account-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div class="account-info">
+                                    <p>@fashion_store</p>
+                                    <span>50K followers</span>
+                                </div>
+                            </div>
+                            <div class="account-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div class="account-info">
+                                    <p>@tech_gadgets</p>
+                                    <span>300K followers</span>
+                                </div>
+                            </div>
+                            <div class="account-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div class="account-info">
+                                    <p>@beauty_shop</p>
+                                    <span>200K followers</span>
+                                </div>
+                            </div>
+                            <button class="close-btn" style="border-color:  blue;border-radius: 5%;">view-more</button>
+                        </div>
+                    </aside>
+                    <div class="post-image">
+                        <video class="post-video" autoplay muted loop playsinline>
+                            <source src="9428859-uhd_2160_4096_25fps.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-actions">
+                            <div class="action-item">
+                                <button class="action-btn like-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <span class="action-count">1.2K</span>
+                            </div>
+                            <div class="action-item">
+                                <button class="action-btn share-btn">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                                <span class="action-count">234</span>
+                            </div>
+                            <div class="action-item">
+                                <button class="action-btn bookmark-btn">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                                <span class="action-count">56</span>
+                            </div>
+                        </div>
+                        <div class="product-overlay">
+                            <div class="product-info">
+                                <h3> Pearl Necklace</h3>
+                                <p class="price">$19.99</p>
+                                <button class="add-to-cart-btn" data-product-id="1" data-product-name="Pearl Necklace" data-product-price="19.99">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments-section">
+                        <h4>Comments</h4>
+                        <div class="comment-input">
+                            <input type="text" placeholder="Add a comment...">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                        <div class="comments-list">
+                            <div class="comment">
+                                <div class="comment-header">
+                                    <div class="user-info">
+                                        <img src="image.png" alt="User Avatar" class="user-avatar">
+                                        <p class="comment-user">@user1</p>
+                                    </div>
+                                    <span class="comment-time">2h ago</span>
+                                </div>
+                                <p class="comment-text">Great product! Love it 😊</p>
+                                <div class="comment-actions">
+                                    <span>45</span>
+                                    <button>Reply</button>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="comment-header">
+                                    <div class="user-info">
+                                        <img src="image.png" alt="User Avatar" class="user-avatar">
+                                        <p class="comment-user">@user2</p>
+                                    </div>
+                                    <span class="comment-time">1h ago</span>
+                                </div>
+                                <p class="comment-text">best store till date.</p>
+                                <div class="comment-actions">
+                                    <span>12</span>
+                                    <button>Reply</button>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="comment-header">
+                                    <div class="user-info">
+                                        <img src="image.png" alt="User Avatar" class="user-avatar">
+                                        <p class="comment-user">@user3</p>
+                                    </div>
+                                    <span class="comment-time">30m ago</span>
+                                </div>
+                                <p class="comment-text">very nice</p>
+                                <div class="comment-actions">
+                                    <span>12</span>
+                                    <button>Reply</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                
+            </div>
+
+            <div class="post">
+                <div class="post-container">
+                    <aside class="profile-sidebar">
+                        <div class="profile-card">
+                            <div class="profile-header">
+                                <div class="profile-pic">
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                                <h3>FullFit</h3>
+                                <p class="username">@your Wear</p>
+                                <div class="profile-stats">
+                                    <div class="stat">
+                                        <span>2K</span>
+                                        <p>Following</p>
+                                    </div>
+                                    <div class="stat">
+                                        <span>100K</span>
+                                        <p>Followers</p>
+                                    </div>
+                                </div>
+                                <button class="follow-btn">Following</button>
+                            </div>
+                        </div>
+            
+                        <div class="suggested-accounts">
+                            <h4>Suggested Accounts</h4>
+                            <div class="account-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div class="account-info">
+                                    <p>@fashion_store</p>
+                                    <span>500K followers</span>
+                                </div>
+                            </div>
+                            <div class="account-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div class="account-info">
+                                    <p>@tech_gadgets</p>
+                                    <span>300K followers</span>
+                                </div>
+                            </div>
+                            <div class="account-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div class="account-info">
+                                    <p>@beauty_shop</p>
+                                    <span>200K followers</span>
+                                </div>
+                            </div>
+                            <button class="close-btn" style="border-color:  blue;border-radius: 5%;">view-more</button>
+                        </div>
+                    </aside>
+                    <div class="post-image">
+                        <video class="post-video" autoplay muted loop playsinline>
+                            <source src="5890243-uhd_2160_3840_25fps.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-actions">
+                            <div class="action-item">
+                                <button class="action-btn like-btn">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <span class="action-count">1.2K</span>
+                            </div>
+                            <div class="action-item">
+                                <button class="action-btn share-btn">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                                <span class="action-count">234</span>
+                            </div>
+                            <div class="action-item">
+                                <button class="action-btn bookmark-btn">
+                                    <i class="fas fa-bookmark"></i>
+                                </button>
+                                <span class="action-count">56</span>
+                            </div>
+                        </div>
+                        <div class="product-overlay">
+                            <div class="product-info">
+                                <h3>Trendy Fashion Item</h3>
+                                <p class="price">$29.99</p>
+                                <button class="add-to-cart-btn" data-product-id="1" data-product-name="Men Wear Set" data-product-price="89.99">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments-section">
+                        <h4>Comments</h4>
+                        <div class="comment-input">
+                            <input type="text" placeholder="Add a comment...">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                        <div class="comments-list">
+                            <div class="comment">
+                                <div class="comment-header">
+                                    <div class="user-info">
+                                        <img src="image.png" alt="User Avatar" class="user-avatar">
+                                        <p class="comment-user">@user1</p>
+                                    </div>
+                                    <span class="comment-time">2h ago</span>
+                                </div>
+                                <p class="comment-text">Great product! Love it 😊</p>
+                                <div class="comment-actions">
+                                    <span>45</span>
+                                    <button>Reply</button>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="comment-header">
+                                    <div class="user-info">
+                                        <img src="image.png" alt="User Avatar" class="user-avatar">
+                                        <p class="comment-user">@user2</p>
+                                    </div>
+                                    <span class="comment-time">1h ago</span>
+                                </div>
+                                <p class="comment-text">best store till date.</p>
+                                <div class="comment-actions">
+                                    <span>12</span>
+                                    <button>Reply</button>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="comment-header">
+                                    <div class="user-info">
+                                        <img src="image.png" alt="User Avatar" class="user-avatar">
+                                        <p class="comment-user">@user3</p>
+                                    </div>
+                                    <span class="comment-time">5m ago</span>
+                                </div>
+                                <p class="comment-text">very nice</p>
+                                <div class="comment-actions">
+                                    <span>12</span>
+                                    <button>Reply</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                
+            </div>
+
+        </main>
+
+        
+
+    </div>
+
+    <!-- Cart Notification -->
+    <div class="cart-notification" id="cartNotification">
+        Item added to cart!
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
