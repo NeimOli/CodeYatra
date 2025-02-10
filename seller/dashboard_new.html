@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard - ReelShop</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">ReelShop</div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-box"></i>
+                    Products
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    Orders
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    Analytics
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    Settings
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="header-right">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="profile">
+                        <img src="https://via.placeholder.com/40" alt="Profile">
+                        <span>John Doe</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon sales">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>Total Sales</h3>
+                            <p class="stat-value">$12,345</p>
+                            <span class="stat-change positive">+15% <i class="fas fa-arrow-up"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon orders">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>Orders</h3>
+                            <p class="stat-value">150</p>
+                            <span class="stat-change positive">+8% <i class="fas fa-arrow-up"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon products">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>Products</h3>
+                            <p class="stat-value">45</p>
+                            <span class="stat-change neutral">0% <i class="fas fa-minus"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon customers">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>Customers</h3>
+                            <p class="stat-value">1,234</p>
+                            <span class="stat-change positive">+12% <i class="fas fa-arrow-up"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upload Section -->
+                <div class="section upload-section">
+                    <div class="section-header">
+                        <h2>Upload New Product</h2>
+                    </div>
+                    <div class="upload-container">
+                        <div class="video-upload">
+                            <div class="upload-box" id="videoDropZone">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Drag & Drop your video here or</p>
+                                <input type="file" id="videoInput" accept="video/*" hidden>
+                                <button class="browse-btn" onclick="document.getElementById('videoInput').click()">Browse Files</button>
+                            </div>
+                            <div class="video-preview" id="videoPreview" style="display: none;">
+                                <video id="previewPlayer" controls></video>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <form id="productForm">
+                                <div class="form-group">
+                                    <label for="productName">Product Name</label>
+                                    <input type="text" id="productName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="productPrice">Price ($)</label>
+                                    <input type="number" id="productPrice" step="0.01" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="productCategory">Category</label>
+                                    <select id="productCategory" required>
+                                        <option value="">Select Category</option>
+                                        <option value="clothing">Clothing</option>
+                                        <option value="electronics">Electronics</option>
+                                        <option value="accessories">Accessories</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="productDescription">Description</label>
+                                    <textarea id="productDescription" rows="3" required></textarea>
+                                </div>
+                                <button type="submit" class="upload-submit-btn">Upload Product</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Orders -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Recent Orders</h2>
+                        <button class="view-all">View All</button>
+                    </div>
+                    <div class="orders-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Product</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#12345</td>
+                                    <td>Alice Johnson</td>
+                                    <td>Trendy T-Shirt</td>
+                                    <td>$29.99</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                    <td>
+                                        <button class="action-btn">Details</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#12344</td>
+                                    <td>Bob Smith</td>
+                                    <td>Classic Sneakers</td>
+                                    <td>$79.99</td>
+                                    <td><span class="status completed">Completed</span></td>
+                                    <td>
+                                        <button class="action-btn">Details</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#12343</td>
+                                    <td>Carol White</td>
+                                    <td>Stylish Jeans</td>
+                                    <td>$49.99</td>
+                                    <td><span class="status shipped">Shipped</span></td>
+                                    <td>
+                                        <button class="action-btn">Details</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Product Performance -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Top Products</h2>
+                        <button class="view-all">View All</button>
+                    </div>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <img src="https://via.placeholder.com/150" alt="Product">
+                            <div class="product-info">
+                                <h3>Trendy T-Shirt</h3>
+                                <p class="price">$29.99</p>
+                                <div class="product-stats">
+                                    <span>Sales: 123</span>
+                                    <span>Stock: 45</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://via.placeholder.com/150" alt="Product">
+                            <div class="product-info">
+                                <h3>Classic Sneakers</h3>
+                                <p class="price">$79.99</p>
+                                <div class="product-stats">
+                                    <span>Sales: 89</span>
+                                    <span>Stock: 34</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://via.placeholder.com/150" alt="Product">
+                            <div class="product-info">
+                                <h3>Stylish Jeans</h3>
+                                <p class="price">$49.99</p>
+                                <div class="product-stats">
+                                    <span>Sales: 78</span>
+                                    <span>Stock: 56</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
