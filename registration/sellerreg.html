@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReelShop - Seller Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f6f5f7;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .container {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .title {
+            color: #333;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            color: #666;
+            font-size: 1.2rem;
+            margin: 1.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #5995fd;
+        }
+
+        .input-field {
+            position: relative;
+            margin-bottom: 1.5rem;
+            border-radius: 55px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            padding: 0 0.5rem;
+        }
+
+        .input-field i {
+            width: 50px;
+            text-align: center;
+            color: #acacac;
+            font-size: 1.1rem;
+            z-index: 1;
+        }
+
+        .input-field input,
+        .input-field textarea {
+            width: 100%;
+            padding: 15px;
+            background: none;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .input-field textarea {
+            width: calc(100% - 50px);
+            min-height: 100px;
+            border-radius: 15px;
+            resize: vertical;
+            font-family: inherit;
+            padding: 15px 15px 15px 0;
+            margin: 0;
+            line-height: 1.5;
+            margin-left: 50px;
+        }
+
+        .input-field.textarea-field {
+            padding-right: 15px;
+            border-radius: 25px;
+            align-items: flex-start;
+            padding-top: 10px;
+            position: relative;
+        }
+
+        .input-field.textarea-field i {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding-top: 0;
+        }
+
+        .input-field input::placeholder,
+        .input-field textarea::placeholder {
+            color: #aaa;
+        }
+
+        .checkbox-group {
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox-group label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .checkbox-group a {
+            color: #5995fd;
+            text-decoration: none;
+        }
+
+        .checkbox-group a:hover {
+            text-decoration: underline;
+        }
+
+        .register-btn {
+            width: 100%;
+            max-width: 200px;
+            height: 49px;
+            border: none;
+            outline: none;
+            border-radius: 49px;
+            cursor: pointer;
+            background-color: #5995fd;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin: 1rem auto;
+            display: block;
+            transition: 0.5s;
+        }
+
+        .register-btn:hover {
+            background-color: #4d84e2;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #666;
+        }
+
+        .login-link a {
+            color: #5995fd;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 570px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .input-field {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="sellerRegistrationForm" action="#" class="sign-in-form">
+            <h2 class="title">Create Seller Account</h2>
+            
+            <h3 class="section-title">Personal Information</h3>
+            
+            <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input type="text" id="fullname" name="fullname" placeholder="Full Name" required />
+            </div>
+
+            <div class="input-field">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" name="email" placeholder="Email" required />
+            </div>
+
+            <div class="input-field">
+                <i class="fas fa-phone"></i>
+                <input type="tel" id="phone" name="phone" placeholder="Phone Number" required />
+            </div>
+
+            <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" name="password" placeholder="Password" required />
+            </div>
+
+            <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required />
+            </div>
+
+            <h3 class="section-title">Business Information</h3>
+
+            <div class="input-field">
+                <i class="fas fa-store"></i>
+                <input type="text" id="businessName" name="businessName" placeholder="Business Name" required />
+            </div>
+
+            <div class="input-field">
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" id="businessAddress" name="businessAddress" placeholder="Business Address" required />
+            </div>
+
+            <div class="input-field">
+                <i class="fas fa-file-invoice"></i>
+                <input type="text" id="panNumber" name="panNumber" placeholder="PAN Number" required />
+            </div>
+
+            <div class="input-field textarea-field">
+                <i class="fas fa-file-alt"></i>
+                <textarea id="businessDescription" name="businessDescription" placeholder="Describe your business and products..." required></textarea>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the <a href="/terms">Terms and Conditions</a> and <a href="/seller-policy">Seller Policy</a></label>
+            </div>
+
+            <button type="submit" class="register-btn">Register as Seller</button>
+            
+            <div class="login-link">
+                Already have a seller account? <a href="../login/login.html">Login here</a>
+            </div>
+        </form>
+    </div>
+    <script src="sellerreg.js"></script>
+</body>
+</html>

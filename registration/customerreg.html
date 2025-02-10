@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReelShop - Customer Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f6f5f7;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .container {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .title {
+            color: #333;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .input-field {
+            position: relative;
+            margin-bottom: 1.5rem;
+            border-radius: 55px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            padding: 0 0.5rem;
+        }
+
+        .input-field i {
+            width: 50px;
+            text-align: center;
+            color: #acacac;
+            font-size: 1.1rem;
+            z-index: 1;
+        }
+
+        .input-field input {
+            width: 100%;
+            padding: 15px;
+            background: none;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .input-field input::placeholder {
+            color: #aaa;
+        }
+
+        .register-btn {
+            width: 100%;
+            max-width: 200px;
+            height: 49px;
+            border: none;
+            outline: none;
+            border-radius: 49px;
+            cursor: pointer;
+            background-color: #5995fd;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin: 1rem auto;
+            display: block;
+            transition: 0.5s;
+        }
+
+        .register-btn:hover {
+            background-color: #4d84e2;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #666;
+        }
+
+        .login-link a {
+            color: #5995fd;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 570px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .input-field {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="registrationForm" action="#" class="sign-in-form">
+            <h2 class="title">Create Customer Account</h2>
+            
+            <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input type="text" id="fullname" name="fullname" placeholder="Full Name" required />
+            </div>
+
+            <div class="input-field">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" name="email" placeholder="Email" required />
+            </div>
+
+            <div class="input-field">
+                <i class="fas fa-phone"></i>
+                <input type="tel" id="phone" name="phone" placeholder="Phone Number" required />
+            </div>
+
+            <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" name="password" placeholder="Password" required />
+            </div>
+
+            <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required />
+            </div>
+
+            <button type="submit" class="register-btn">Create Account</button>
+            
+            <div class="login-link">
+                Already have an account? <a href="../login/login.html">Login here</a>
+            </div>
+        </form>
+    </div>
+    <script src="customerreg.js"></script>
+</body>
+</html>
