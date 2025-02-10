@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReelShop - Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Preloader Styling */
+        #preloader {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .preloader-text {
+            font-size: 7rem;
+            font-weight: bold;
+            color: #007bff;
+            position: absolute;
+            opacity: 0;
+        }
+
+        .reel {
+            left: -100%;
+            animation: moveLeft 2s ease-in-out forwards;
+        }
+
+        .share {
+            right: -100%;
+            animation: moveRight 2s ease-in-out forwards;
+        }
+
+        @keyframes moveLeft {
+            0% { left: -100%; opacity: 0; }
+            50% { opacity: 1; }
+            100% { left: 34%; opacity: 1; }
+        }
+
+        @keyframes moveRight {
+            0% { right: -100%; opacity: 0; }
+            50% { opacity: 1; }
+            100% { right: 30%; opacity: 1; }
+        }
+
+        /* Slogan Styling */
+        .slogan-text {
+            position: absolute;
+            bottom: 35%;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #007bff;
+            opacity: 0;
+            animation: fadeIn 3s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-text reel">Reel</div>
+        <div class="preloader-text share">Shop</div>
+        <div class="slogan-text">see it, love it, buy it</div>
+    </div>
+
+    <div class="container" style="opacity: 0; transition: opacity 0.5s ease-in-out;">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <!-- User Login Form -->
+                <form action="#" class="sign-in-form">
+                    <h2 class="title">User Login</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="userEmail" placeholder="Email" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="userPassword" placeholder="Password" />
+                    </div>
+                    <input type="submit" value="Login" class="btn solid" onclick="userLogin(event)" />
+                    <p class="social-text">Don't have an account? <a href="../registration/customerreg.html" onclick="toggleForms()">Sign up</a></p>
+                </form>
+
+                <!-- Seller Login Form -->
+                <form action="#" class="sign-up-form">
+                    <h2 class="title">Business Login</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="sellerEmail" placeholder="Email" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="sellerPassword" placeholder="Password" />
+                    </div>
+                    <input type="submit" value="Login" class="btn solid" onclick="sellerLogin(event)" />
+                    <p class="social-text">new to app? <a href="../registration/sellerreg.html">Register here</a></p>
+                </form>
+            </div>
+        </div>
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Do you own a Business?</h3>
+                    <p>Login to your business account to manage your products and orders</p>
+                    <button class="btn transparent" id="sign-up-btn" onclick="toggleForms()">Business Login</button>
+                </div>
+            </div>
+
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>Are you a Customer?</h3>
+                    <p>Login to your account to start shopping</p>
+                    <button class="btn transparent" id="sign-in-btn" onclick="toggleForms()">User Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Preloader functionality
+        window.onload = function () {
+            setTimeout(() => {
+                document.getElementById("preloader").style.display = "none";
+                let content = document.querySelector(".container");
+                content.style.opacity = "2";
+            }, 2980); // Preloader lasts 2 seconds
+        };
+    </script>
+    <script src="script.js"></script>
+
+</body>
+</html>
